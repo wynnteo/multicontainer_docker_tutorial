@@ -1,0 +1,32 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "To setup a multi-containers docker to host a frontend server running on Angular 11, a Node.js backend server and a NGINX reversed proxy server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=dev && node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mysql",
+    "restfulapi",
+    "aws elasticbeanstalk",
+    "codepipeline",
+    "multi-containers",
+    "docker",
+    "angular11"
+  ],
+  "author": "SGWebFreelancer",
+  "license": "ISC",
+  "dependencies": {
+    "app-config": "^1.0.0",
+    "body-parser": "^1.19.0",
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4"
+  }
+}

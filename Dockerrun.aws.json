@@ -1,0 +1,45 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "341178780208.dkr.ecr.ap-southeast-1.amazonaws.com/daily-task-assistant-api-client",
+      "hostname": "client",
+      "essential": true,
+	    "memory": 1280,
+      "portMappings": [
+        {
+          "hostPort": 4200,
+          "containerPort": 4200
+        }
+      ]
+    },
+    {
+      "name": "api",
+      "image": "341178780208.dkr.ecr.ap-southeast-1.amazonaws.com/daily-task-assistant-api",
+      "hostname": "api",
+      "essential": true,
+	    "memory": 384,
+      "portMappings": [
+        {
+          "hostPort": 3000,
+          "containerPort": 3000
+        }
+      ]
+    },
+    {
+      "name": "nginx",
+      "image": "341178780208.dkr.ecr.ap-southeast-1.amazonaws.com/daily-task-assistant-ngnix",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["client", "api"],
+	    "memory": 256
+    }
+  ]
+}

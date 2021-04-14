@@ -1,0 +1,26 @@
+version: '3'
+services: 
+  api: 
+    build: 
+      context: ./api
+    container_name: api
+    image: 341178780208.dkr.ecr.ap-southeast-1.amazonaws.com/daily-task-assistant-api
+    ports: 
+      - "3000:3000"
+  ui: 
+    build: 
+      context: ./ui
+    container_name: ui
+    image: 341178780208.dkr.ecr.ap-southeast-1.amazonaws.com/daily-task-assistant-api-client
+    ports: 
+      - "4200:4200"
+  nginx: 
+    container_name: nginx
+    depends_on: 
+      - ui
+      - api
+    image: 341178780208.dkr.ecr.ap-southeast-1.amazonaws.com/daily-task-assistant-ngnix
+    ports: 
+      - "80:80"
+    build:
+      context: ./nginx
