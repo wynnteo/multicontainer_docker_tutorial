@@ -2,9 +2,9 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
-      "name": "client",
-      "image": "341178780208.dkr.ecr.ap-southeast-1.amazonaws.com/daily-task-assistant-api-client",
-      "hostname": "client",
+      "name": "ui",
+      "image": "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/app-ui",
+      "hostname": "ui",
       "essential": true,
 	    "memory": 1280,
       "portMappings": [
@@ -16,7 +16,7 @@
     },
     {
       "name": "api",
-      "image": "341178780208.dkr.ecr.ap-southeast-1.amazonaws.com/daily-task-assistant-api",
+      "image": "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/app-api",
       "hostname": "api",
       "essential": true,
 	    "memory": 384,
@@ -29,7 +29,7 @@
     },
     {
       "name": "nginx",
-      "image": "341178780208.dkr.ecr.ap-southeast-1.amazonaws.com/daily-task-assistant-ngnix",
+      "image": "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/app-ngnix",
       "hostname": "nginx",
       "essential": true,
       "portMappings": [
@@ -38,7 +38,7 @@
           "containerPort": 80
         }
       ],
-      "links": ["client", "api"],
+      "links": ["ui", "api"],
 	    "memory": 256
     }
   ]

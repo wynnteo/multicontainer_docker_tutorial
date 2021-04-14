@@ -4,14 +4,14 @@ services:
     build: 
       context: ./api
     container_name: api
-    image: 341178780208.dkr.ecr.ap-southeast-1.amazonaws.com/daily-task-assistant-api
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}amazonaws.com/app-api
     ports: 
       - "3000:3000"
   ui: 
     build: 
       context: ./ui
     container_name: ui
-    image: 341178780208.dkr.ecr.ap-southeast-1.amazonaws.com/daily-task-assistant-api-client
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/app-ui
     ports: 
       - "4200:4200"
   nginx: 
@@ -19,7 +19,7 @@ services:
     depends_on: 
       - ui
       - api
-    image: 341178780208.dkr.ecr.ap-southeast-1.amazonaws.com/daily-task-assistant-ngnix
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/app-ngnix
     ports: 
       - "80:80"
     build:

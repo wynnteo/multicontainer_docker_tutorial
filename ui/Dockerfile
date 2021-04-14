@@ -12,4 +12,4 @@ COPY . .
 
 EXPOSE 4200
 
-CMD ["npm", "run", "aws-eb:prod"]
+CMD ["npm", "run", "eb_start"]

@@ -6,7 +6,7 @@
     "start": "ng serve --host 0.0.0.0 --port 4200",
     "build": "ng build",
     "build:prod": "ng build --prod --aot --buildOptimizer=true",
-    "aws-eb:prod": "npm run build:prod && node src/app.js",
+    "eb_start": "npm run build && node src/app.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
