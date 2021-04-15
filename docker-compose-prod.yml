@@ -19,7 +19,7 @@ services:
     depends_on: 
       - ui
       - api
-    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/app-ngnix
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/app-nginx
     ports: 
       - "80:80"
     build:
