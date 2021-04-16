@@ -1,7 +1,7 @@
 var express = require('express');
 var path = require('path');
 var app = express();
-var dist = path.resolve(__dirname + '/../dist/client');
+var dist = path.resolve(__dirname + '/../dist/ui');
 var fallbackPath = path.resolve(dist + '/index.html');
 var port = 4200;
 var datetime = "LastSync: " + new Date();
