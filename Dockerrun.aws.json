@@ -6,7 +6,7 @@
       "image": "921490761789.dkr.ecr.ap-southeast-1.amazonaws.com/app-ui",
       "hostname": "ui",
       "essential": true,
-      "memory": 1280,
+      "memory": 1024,
       "portMappings": [
         {
           "hostPort": 4200,
@@ -19,7 +19,7 @@
       "image": "921490761789.dkr.ecr.ap-southeast-1.amazonaws.com/app-api",
       "hostname": "api",
       "essential": true,
-      "memory": 384,
+      "memory": 512,
       "portMappings": [
         {
           "hostPort": 3000,
@@ -39,7 +39,7 @@
         }
       ],
       "links": ["ui", "api"],
-      "memory": 256
+      "memory": 512
     }
   ]
 }

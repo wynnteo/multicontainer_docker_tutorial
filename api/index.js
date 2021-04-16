@@ -24,7 +24,7 @@ app.get("/api", (req, res) => {
   res.json({ message: "Welcome to backend application." });
 });
 
-require("./routes/routes.js")(app);
+//require("./routes/routes.js")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3000;
